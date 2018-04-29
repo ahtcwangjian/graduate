@@ -7,6 +7,7 @@ use think\Db;
 use think\Session;
 use think\Log;
 use think\Validate;
+use think\File;
 
 class Index extends Controller
 {
@@ -132,5 +133,47 @@ class Index extends Controller
         return $this->fetch();
     }
 
+    /**
+     * @return mixed
+     * 新增年鉴页面
+     */
+    public function add()
+    {
+        return $this->fetch();
+    }
+
+    /**
+     * 新增年鉴的提交按钮点击事件
+     */
+    public function infoAjax(Request $request)
+    {
+        // 获取表单上传文件 例如上传了001.jpg
+        $file = request()->file('myfile');
+// 移动到框架应用根目录/public/uploads/ 目录下
+        $info = $file->move(ROOT_PATH . 'public' . DS . 'uploads');
+        if($info){
+// 成功上传后 获取上传信息
+// 输出 jpg
+//            echo $info->getExtension();
+//// 输出 20160820/42a79759f284b767dfcb2a0197904287.jpg
+//            echo $info->getSaveName();
+//// 输出 42a79759f284b767dfcb2a0197904287.jpg
+            echo $info->getFilename();
+        }else{
+// 上传失败获取错误信息
+            echo $file->getError();
+        }
+        echo "<hr>";
+        echo $request->param("author");
+
+        echo "<hr>";
+        $fileName=ROOT_PATH . 'public' . DS . 'uploads'.DS.$info->getSaveName();
+        $myfile=fopen($fileName,'r');
+        while(!feof($myfile))
+        {
+            echo fgetc($myfile);
+        }
+
+    }
 
 }

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>年鉴新增页面</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="__JS__/jquery-3.3.1.min.js"></script>
+</head>
+<style>
+    #sysTitle{
+        text-align: center;
+
+    }
+    #add{
+        font-size: 15px;
+        margin-right: 20px;
+    }
+
+</style>
+<body>
+<h1 id="sysTitle">滁州学院年鉴信息管理系统</h1>
+<hr>
+
+<div style="background: lightgoldenrodyellow;text-align: center">
+    <form action="infoAjax" id="info_form" method="post" enctype="multipart/form-data">
+        年份：<input type="text" placeholder="请输入年份" name="year" id="year"><br>
+        作者：<input type="text" placeholder="请输入作者" name="author" id="author"><br>
+        备注：<input type="text" placeholder="请输入备注" name="remark" id="remark"><br>
+        内容：<input type="file" name="myfile" id="myfile" ><br><br><br>
+        <input type="submit" id="tijiao" value="提交">
+    </form>
+</div>
+
+</body>
+</html>
+<script>
+//    /*新增年鉴的提交按钮点击事件*/
+//    $("#tijiao").on("click",function(){
+//        console.log("登录点击事件");
+//        $.ajax({
+//            type: "POST",
+//            url: "{:url('Index/infoAjax')}",
+////            data: $("#info_form").serialize(),
+//            data: {},
+//            dataType: "json",
+//            success: function (data) {
+////                console.log(data);
+////                alert(data.message);
+//                if(data.status==1){
+////                    window.location.href="{:url('Index/manage')}";
+////                    alert("注册成功");
+//                }
+//                else{
+////                    alert("提交失败");
+//                    alert(data.message);
+//                }
+//            },
+//            error: function(XMLHttpRequest, textStatus, errorThrown){
+//
+//            }
+//        })
+//    });
+</script>
