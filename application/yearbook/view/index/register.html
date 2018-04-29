@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>大学年鉴系统注册页面</title>
+    <script type="text/javascript" src="__JS__/jquery-3.3.1.min.js"></script>
     <style>
         * {
             margin: 0;padding: 0;
@@ -49,22 +50,21 @@
     <div class="d2">
         <h2>大学生年鉴信息管理系统</h2>
         <div class="d3">
-            <form action="">
+            <form id="userForm" method="post">
                 <p class="p1">用户注册</p>
                 <div class="d4">
                     <div class="d41">
                         <p>学号：</p>
                         <p>密码：</p>
-                        <p>验证码：</p>
+                        <p>再次输入密码：</p>
                     </div>
                     <div class="d42">
-                        <input type="text"><br>
-                        <input type="password" name="pwd"><br>
-                        <input type="text"><br>
+                        <input type="text" name="xuehao" id="xuehao"><br>
+                        <input type="password" name="mima" id="mima"><br>
+                        <input type="password" name="mima_confirm" id="mima_confirm"><br>
                     </div>
-
                 </div>
-                <input class="ipt1" type="submit" value="提交">
+                <input class="ipt1" type="button" id="registerUser" value="提交">
                 <input class="ipt2" type="reset" value="重置">
             </form>
         </div>
@@ -72,3 +72,36 @@
 </div>
 </body>
 </html>
+
+<script>
+    /*注册点击事件*/
+    $("#registerUser").on("click",function(){
+
+        console.log("注册点击事件");
+        $.ajax({
+            type: "POST",
+            url: "{:url('Index/registerAjax')}",
+            data: $("#userForm").serialize(),
+            dataType: "json",
+            success: function (data) {
+//                console.log(data);
+                alert(data.message);
+
+                if(data.status==1){
+                    window.location.href="{:url('Index/index')}";
+//                    alert("注册成功");
+                }
+//                else{
+//                    alert("提交失败");
+//                }
+
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown){
+//                alert(XMLHttpRequest.readyState + XMLHttpRequest.status + XMLHttpRequest.responseText);
+                alert(XMLHttpRequest.readyState);
+                alert(XMLHttpRequest.status);
+                alert( XMLHttpRequest.responseText);
+            }
+        })
+    });
+</script>

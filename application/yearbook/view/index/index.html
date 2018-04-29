@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>年鉴系统登录页面</title>
+    <script type="text/javascript" src="__JS__/jquery-3.3.1.min.js"></script>
     <style>
         * {
             margin: 0;padding: 0;
@@ -46,12 +47,13 @@
     <div class="d2">
         <img src="__STATIC__/login.jpg" alt="">
         <div class="d3">
-            <form action="">
-                账号 : <input type="text"><br><br>
-                密码 : <input type="password" name="pwd"><br><br>
+            <form id="loginForm" method="post">
+                学号 : <input type="text" name="xuehao"><br><br>
+                密码 : <input type="password" name="mima"><br><br>
                 <input id="ipt1" type="radio" value="" checked name="">游客&nbsp&nbsp&nbsp<input id="ipt2" type="radio" value="" name="">管理员<br><br>
-                <input type="submit" value="提交">&nbsp&nbsp&nbsp<input type="reset" value="重置">&nbsp&nbsp&nbsp<input type="button" value="注册"
-                                                                                                                    onclick="javascrtpt:window.location.href='register.html'">
+                <input type="button" value="登录" id="loginBtn">&nbsp;&nbsp;&nbsp;
+                <input type="reset" value="重置">&nbsp;&nbsp;&nbsp;
+                <input type="button" value="注册" onclick="javascrtpt:window.location.href='register.html'">
             </form>
         </div>
     </div>
@@ -69,3 +71,35 @@
     }
 </script>
 </html>
+<script>
+    /*登录点击事件*/
+    $("#loginBtn").on("click",function(){
+
+        console.log("登录点击事件");
+        $.ajax({
+            type: "POST",
+            url: "{:url('Index/loginAjax')}",
+            data: $("#loginForm").serialize(),
+            dataType: "json",
+            success: function (data) {
+//                console.log(data);
+                alert(data.message);
+
+                if(data.status==1){
+                    window.location.href="{:url('Index/index')}";
+//                    alert("注册成功");
+                }
+//                else{
+//                    alert("提交失败");
+//                }
+
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown){
+//                alert(XMLHttpRequest.readyState + XMLHttpRequest.status + XMLHttpRequest.responseText);
+                alert(XMLHttpRequest.readyState);
+                alert(XMLHttpRequest.status);
+                alert( XMLHttpRequest.responseText);
+            }
+        })
+    });
+</script>
