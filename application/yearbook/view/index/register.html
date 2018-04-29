@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>大学年鉴系统注册页面</title>
+    <style>
+        * {
+            margin: 0;padding: 0;
+        }
+        .d1 {
+            width: 800px;height: 350px;
+            background-color: rgb(217,232,252);
+            margin: 150px auto;position: relative;
+        }
+        h2{
+            display: inline-block;
+            width: 380px;height: 80px;
+            position: absolute;left: 0;top: -75px;
+            font-size: 32px;
+        }
+        .p1 {
+            display: block;font-size: 20px;
+            width: 100px;height: 50px;font-weight: bold;
+            margin-left: 150px;padding-top: 50px;
+        }
+        .d4 {
+            width: 500px;height: 120px;
+            margin-left: 150px;
+        }
+        .d41 {
+            float: left;
+        }
+        .d42 {
+            float: left;margin-left: 30px;
+        }
+        .d41 p,.d42 input {
+            margin-bottom: 13px;
+        }
+        .ipt1,.ipt2 {
+            display: inline-block;
+            width: 50px;height: 25px;
+        }
+        .ipt1{margin-left: 150px;}
+        .ipt2{margin-left: 50px;}
+    </style>
+</head>
+<body>
+<div class="d1">
+    <div class="d2">
+        <h2>大学生年鉴信息管理系统</h2>
+        <div class="d3">
+            <form action="">
+                <p class="p1">用户注册</p>
+                <div class="d4">
+                    <div class="d41">
+                        <p>学号：</p>
+                        <p>密码：</p>
+                        <p>验证码：</p>
+                    </div>
+                    <div class="d42">
+                        <input type="text"><br>
+                        <input type="password" name="pwd"><br>
+                        <input type="text"><br>
+                    </div>
+
+                </div>
+                <input class="ipt1" type="submit" value="提交">
+                <input class="ipt2" type="reset" value="重置">
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
