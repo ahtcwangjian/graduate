@@ -2,6 +2,7 @@
 namespace app\yearbook\controller;
 use think\Controller;
 use app\yearbook\model\UserModel;
+use app\yearbook\model\YearbookModel;
 use think\Request;
 use think\Db;
 use think\Session;
@@ -152,27 +153,42 @@ class Index extends Controller
 // 移动到框架应用根目录/public/uploads/ 目录下
         $info = $file->move(ROOT_PATH . 'public' . DS . 'uploads');
         if($info){
-// 成功上传后 获取上传信息
-// 输出 jpg
-//            echo $info->getExtension();
-//// 输出 20160820/42a79759f284b767dfcb2a0197904287.jpg
-//            echo $info->getSaveName();
-//// 输出 42a79759f284b767dfcb2a0197904287.jpg
-            echo $info->getFilename();
+//            echo $info->getFilename();
+            $fileName=ROOT_PATH . 'public' . DS . 'uploads'.DS.$info->getSaveName();
+//            $myfile=fopen($fileName,'r');
+//            while(!feof($myfile))
+//            {
+//                echo fgetc($myfile);
+//            }
+
+            //若是文件上传成功，则将这些上传的文件及表单数据存入数据库。
+            $yearbook=new YearbookModel();
+            $yearbook->year=$request->param("year");
+            $yearbook->author=$request->param("author");
+            $yearbook->remark=$request->param("remark");
+            $yearbook->file_path=$fileName;
+
+            if($yearbook->save())
+            {
+                //数据成功存入数据库
+                $status=1;
+                $result="新增成功！";
+
+                $this->success('新增成功！','Index/manage');
+            }
+            else{
+                //数据未成功存入数据库
+                $status=0;
+                $result="新增失败！"+$yearbook->getError();
+                $this->error('新增失败','Index/add',2);
+            }
+
+
         }else{
 // 上传失败获取错误信息
             echo $file->getError();
         }
-        echo "<hr>";
-        echo $request->param("author");
 
-        echo "<hr>";
-        $fileName=ROOT_PATH . 'public' . DS . 'uploads'.DS.$info->getSaveName();
-        $myfile=fopen($fileName,'r');
-        while(!feof($myfile))
-        {
-            echo fgetc($myfile);
-        }
 
     }
 
