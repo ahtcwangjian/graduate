@@ -83,15 +83,16 @@
             dataType: "json",
             success: function (data) {
 //                console.log(data);
-                alert(data.message);
+//                alert(data.message);
 
                 if(data.status==1){
-                    window.location.href="{:url('Index/index')}";
+                    window.location.href="{:url('Index/manage')}";
 //                    alert("注册成功");
                 }
-//                else{
+                else{
 //                    alert("提交失败");
-//                }
+                    alert(data.message);
+                }
 
             },
             error: function(XMLHttpRequest, textStatus, errorThrown){

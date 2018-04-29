@@ -33,6 +33,11 @@ class Index extends Controller
         return $this->fetch();
     }
 
+    /**
+     * @param Request $request
+     * 注册请求
+     * @return array
+     */
     public function registerAjax(Request $request)
     {
         //       初始返回参数
@@ -73,6 +78,11 @@ class Index extends Controller
     }
 
 
+    /**
+     * @param Request $request
+     * 登录请求
+     * @return array
+     */
     public function loginAjax(Request $request)
     {
         //       初始返回参数
@@ -111,6 +121,15 @@ class Index extends Controller
             }
         }
         return ['status'=>$status,'message'=>$result,'data'=>$data];
+    }
+
+    /**
+     * @return mixed
+     * 首页
+     */
+    public function manage()
+    {
+        return $this->fetch();
     }
 
 
