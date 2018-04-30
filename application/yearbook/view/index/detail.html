@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div style="background: lightgoldenrodyellow;text-align: center">
+    <form action="infoAjax" id="info_form" method="post" enctype="multipart/form-data">
+        年份：<input type="number"  name="title" id="title" value="{$data.year}"><br>
+        标题：<input type="text"  name="year" id="year" value="{$data.title}"><br>
+        作者：<input type="text"  name="author" id="author" value="{$data.author}"><br>
+        备注：<input type="text"  name="remark" id="remark" value="{$data.remark}"><br>
+        内容：
+        <iframe src="{$data.file_path}" frameborder="0"></iframe>
+    </form>
+</div>
+
+</body>
+</html>

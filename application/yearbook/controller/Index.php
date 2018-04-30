@@ -131,6 +131,18 @@ class Index extends Controller
      */
     public function manage()
     {
+        $data=Db::table('info')->where('key_id','>',0)->column('year');
+        $data=array_unique($data);
+//        var_dump($data);
+
+//        echo count($data);
+//        echo sizeof($data);
+
+//        var_dump(array_unique($data));
+
+        $this->assign('yeardata',$data);
+        $this->assign('countdata',count($data));
+//        echo $data;
         return $this->fetch();
     }
 
@@ -164,6 +176,7 @@ class Index extends Controller
             //若是文件上传成功，则将这些上传的文件及表单数据存入数据库。
             $yearbook=new YearbookModel();
             $yearbook->year=$request->param("year");
+            $yearbook->title=$request->param("title");
             $yearbook->author=$request->param("author");
             $yearbook->remark=$request->param("remark");
             $yearbook->file_path=$fileName;
@@ -190,6 +203,32 @@ class Index extends Controller
         }
 
 
+    }
+
+    /**
+     * 具体年份列表页
+     */
+    public function infoList($year)
+    {
+//        $data=$data=Db::table('info')->where('year',$year)->column('title');
+//        $datatitle=$data=Db::table('info')->where('year',$year)->column('title');
+//        $datakeyid=$data=Db::table('info')->where('year',$year)->column('key_id');
+        $datatitle=$data=Db::table('info')->where('year',$year)->select();
+//        var_dump($datatitle);
+        $this->assign("year",$year);
+        $this->assign("datatitle",$datatitle);
+//        $this->assign("datakeyid",$datakeyid);
+        return $this->fetch();
+    }
+
+    /*
+     * 详细信息页面
+     */
+    public function detail($id)
+    {
+        $data=Db::table('info')->where('key_id',$id)->find();
+        $this->assign("data",$data);
+        return $this->fetch();
     }
 
 }

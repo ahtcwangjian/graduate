@@ -23,7 +23,8 @@
 
 <div style="background: lightgoldenrodyellow;text-align: center">
     <form action="infoAjax" id="info_form" method="post" enctype="multipart/form-data">
-        年份：<input type="text" placeholder="请输入年份" name="year" id="year"><br>
+        年份：<input type="number" placeholder="请输入年份" name="title" id="title"><br>
+        标题：<input type="text" placeholder="请输入标题" name="year" id="year"><br>
         作者：<input type="text" placeholder="请输入作者" name="author" id="author"><br>
         备注：<input type="text" placeholder="请输入备注" name="remark" id="remark"><br>
         内容：<input type="file" name="myfile" id="myfile" ><br><br><br>
@@ -34,30 +35,5 @@
 </body>
 </html>
 <script>
-//    /*新增年鉴的提交按钮点击事件*/
-//    $("#tijiao").on("click",function(){
-//        console.log("登录点击事件");
-//        $.ajax({
-//            type: "POST",
-//            url: "{:url('Index/infoAjax')}",
-////            data: $("#info_form").serialize(),
-//            data: {},
-//            dataType: "json",
-//            success: function (data) {
-////                console.log(data);
-////                alert(data.message);
-//                if(data.status==1){
-////                    window.location.href="{:url('Index/manage')}";
-////                    alert("注册成功");
-//                }
-//                else{
-////                    alert("提交失败");
-//                    alert(data.message);
-//                }
-//            },
-//            error: function(XMLHttpRequest, textStatus, errorThrown){
-//
-//            }
-//        })
-//    });
+
 </script>

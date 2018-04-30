@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{$year}年年鉴信息管理系统</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="__JS__/jquery-3.3.1.min.js"></script>
+</head>
+<style>
+    #sysTitle{
+        text-align: center;
+
+    }
+    #add{
+        font-size: 15px;
+        margin-right: 20px;
+    }
+    #div1{
+        text-align: right;
+    }
+    .left{
+        width: 20%;
+        height: 500px;
+        background-color: #cccccc;
+        display: inline;
+        float: left;
+    }
+    .right{
+        width: 80%;
+        height: 500px;
+        background-color: #c9ccbd;
+        display: inline;
+        float: left;
+    }
+</style>
+<body>
+<h1 id="sysTitle">滁州学院{$year}年--年鉴信息管理系统</h1>
+<div id="div1">
+    <!--<button id="add" onclick="javascrtpt:window.location.href='add.html'">&nbsp;新&nbsp;&nbsp;增&nbsp;</button>-->
+    <button id="11"><a href="{:url('Index/manage')}">&nbsp;首&nbsp;&nbsp;页&nbsp;</a></button>
+    <button id="add"><a href="{:url('Index/add')}">&nbsp;新&nbsp;&nbsp;增&nbsp;</a></button>
+
+</div>
+<hr>
+<div style="">
+    <div class="left">
+        <div style="text-align: center">
+            {volist name="datatitle" id="vo"}
+            <span style="border: 1px solid rebeccapurple;margin: 2px;padding: 5px">
+                    <a href="javascript:;" onclick="click_tile('{$vo.key_id}')" style="font-size: 25px">{$vo.title}</a><br><br>
+                </span>
+            {/volist}
+        </div>
+    </div>
+    <div class="right">
+        <iframe src="{:url('Index/detail',['id'=>$vo.key_id])}"  id="iframe_right" style="width: 100%;height: 100%">
+
+        </iframe>
+    </div>
+</div>
+
+
+</body>
+</html>
+<script>
+
+    function click_tile(keyid)
+    {
+//        var keyid=keyid;
+
+        console.log(keyid);
+//        $("#iframe_right").src="{:url('Index/add')}";
+//        $("#iframe_right").attr("src","{:url('Index/detail',['id'=>0])}");
+
+    }
+
+</script>

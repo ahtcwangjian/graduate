@@ -25,6 +25,15 @@
         <button id="add" onclick="javascrtpt:window.location.href='add.html'">&nbsp;新&nbsp;&nbsp;增&nbsp;</button>
     </div>
     <hr>
+    <div style="text-align: center">
+        {volist name="yeardata" id="vo"}
+                <span style="border: 1px solid rebeccapurple;margin: 2px;padding: 5px">
+                    <a href="{:url('infoList',['year'=>$vo])}"  style="font-size: 25px">{$vo}</a><br><br>
+                </span>
+        {/volist}
+    </div>
+
+
 </body>
 </html>
 <script>
@@ -34,4 +43,11 @@
 //
 //
 //    });
+
+//    function click_enter(year)
+//    {
+//        console.log(year);
+//        window.location.href="";
+//    }
+
 </script>
