@@ -293,4 +293,73 @@ class Index extends Controller
 
     }
 
+
+    /**
+     * @param Request $request
+     * @return array
+     * 保存提交的数据
+     */
+    public function saveData(Request $request)
+    {
+        $year=$request->param("year");
+        $title=$request->param("title");
+        $author=$request->param("author");
+        $remark=$request->param("remark");
+        $content=$request->param("content");
+        //如果标题 和 内容不为空，则将数据保存到数据库 tk_title  tk_textarea
+        if((!empty($title))&&(!empty($content))){
+
+            //将数据存进数据库
+            $yearbook=new YearbookModel();
+            $yearbook->year=$year;
+            $yearbook->title=$title;
+            $yearbook->author=$author;
+            $yearbook->remark=$remark;
+            $yearbook->textarea=$content;
+            if($yearbook->save()){
+                return 1;
+            }
+            else{
+                return 0;
+            }
+
+//            return ['data'=>"success",'biao'=>$biao,'content'=>$content];
+        }else{
+//            return json_encode("fail");
+            return ['data'=>"fail"];
+        }
+//        return "sss";
+    }
+
+    //更新所编辑的列表数据
+    public function updateData(Request $request){
+        $year=$request->param("year");
+        $title=$request->param("title");
+        $author=$request->param("author");
+        $remark=$request->param("remark");
+        $keyid=$request->param("keyid");
+        $content=$request->param("content");
+
+        //如果标题 和 内容不为空，则将数据保存到数据库 tk_title  tk_textarea
+        if((!empty($title))&&(!empty($content))){
+
+            //将数据存进数据库
+            $yearbook=YearbookModel::get($keyid);
+            $yearbook->year=$year;
+            $yearbook->title=$title;
+            $yearbook->author=$author;
+            $yearbook->remark=$remark;
+            $yearbook->textarea=$content;
+            if($yearbook->save()){
+                return 1;
+            }
+            else{
+                return 0;
+            }
+        }else{
+            return ['data'=>"fail"];
+        }
+
+    }
+
 }
