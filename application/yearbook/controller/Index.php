@@ -231,4 +231,9 @@ class Index extends Controller
         return $this->fetch();
     }
 
+    public function detailAjax($id)
+    {
+        return $id;
+    }
+
 }

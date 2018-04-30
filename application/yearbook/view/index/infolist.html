@@ -69,8 +69,23 @@
 //        var keyid=keyid;
 
         console.log(keyid);
+
+//        $.ajax({
+//            type: "POST",
+//            url: "{:url('Index/detailAjax')}",
+//            data: {id:keyid},
+////            dataType: "text",
+//            success: function (data) {
+//                console.log(data);
+//
+//
+//            },
+//            error: function(XMLHttpRequest, textStatus, errorThrown){
+//            }
+//        })
 //        $("#iframe_right").src="{:url('Index/add')}";
 //        $("#iframe_right").attr("src","{:url('Index/detail',['id'=>0])}");
+        $("#iframe_right").attr("src","{:url('Index/detail')}?id="+keyid);
 
     }
 

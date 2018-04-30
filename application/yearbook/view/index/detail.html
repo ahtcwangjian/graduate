@@ -1,21 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Title</title>
 </head>
 <body>
+<style>
+    /*#txt_iframe*/
+    /*{*/
+        /*!*width:100%;*!*/
+        /*!*height: 100%;*!*/
+    /*}*/
+</style>
 
-<div style="background: lightgoldenrodyellow;text-align: center">
-    <form action="infoAjax" id="info_form" method="post" enctype="multipart/form-data">
-        年份：<input type="number"  name="title" id="title" value="{$data.year}"><br>
-        标题：<input type="text"  name="year" id="year" value="{$data.title}"><br>
+<div style="background: lightgoldenrodyellow;text-align: center;height: 450px">
+        年份：<input type="number"  name="year" id="year" value="{$data.year}"><br>
+        标题：<input type="text"  name="title" id="title" value="{$data.title}"><br>
         作者：<input type="text"  name="author" id="author" value="{$data.author}"><br>
         备注：<input type="text"  name="remark" id="remark" value="{$data.remark}"><br>
         内容：
-        <iframe src="{$data.file_path}" frameborder="0"></iframe>
-    </form>
+        <!--<iframe id="iframe1" src="{$data.file_path}" name="iframe1" frameborder="0"></iframe>-->
+        <div id="divtxt" style="border: 1px solid red">
+            <?php
+            header('Content-Type: text/html; charset=utf-8');
+            $fileName=$data['file_path'];
+            $myfile=fopen($fileName,'r');
+            while(!feof($myfile))
+            {
+            echo fgetc($myfile);
+
+            }
+            fclose($myfile);
+            ?>
+        </div>
 </div>
 
 </body>
 </html>
+<srript>
+
+</srript>
