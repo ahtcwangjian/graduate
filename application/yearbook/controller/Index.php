@@ -231,9 +231,66 @@ class Index extends Controller
         return $this->fetch();
     }
 
-    public function detailAjax($id)
+    public function delAjax($id)
     {
-        return $id;
+        $res=0;
+        if(Db::table('info')->where('key_id',$id)->delete())
+        {
+            $res=1;
+        }
+        return $res;
+    }
+
+    public function edit($id)
+    {
+        $data=Db::table('info')->where('key_id',$id)->find();
+        $this->assign("data",$data);
+        return $this->fetch();
+    }
+
+    public function editAjax(Request $request)
+    {
+
+        // 获取表单上传文件 例如上传了001.jpg
+        $file = request()->file('myfile');
+// 移动到框架应用根目录/public/uploads/ 目录下
+        $info = $file->move(ROOT_PATH . 'public' . DS . 'uploads');
+        if($info){
+//            echo $info->getFilename();
+            $fileName=ROOT_PATH . 'public' . DS . 'uploads'.DS.$info->getSaveName();
+
+            //若是文件上传成功，则将这些上传的文件及表单数据存入数据库。
+            $yearbook=YearbookModel::getByKeyId($request->param("kid"));
+            $yearbook->year=$request->param("year");
+            $yearbook->title=$request->param("title");
+            $yearbook->author=$request->param("author");
+            $yearbook->remark=$request->param("remark");
+            $yearbook->file_path=$fileName;
+
+            if($yearbook->save())
+            {
+                //数据成功存入数据库
+                $status=1;
+                $result="新增成功！";
+
+//                return "<script>alert('修改成功');</script>>";
+                return "<script>window.parent.location.reload();</script>>";
+//                $this->success('新增成功！','Index/manage');
+            }
+            else{
+                //数据未成功存入数据库
+                $status=0;
+                $result="新增失败！"+$yearbook->getError();
+//                $this->error('新增失败','Index/add',2);
+            }
+
+
+        }else{
+// 上传失败获取错误信息
+            echo $file->getError();
+        }
+
+
     }
 
 }

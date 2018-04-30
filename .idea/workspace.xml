@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a1ae30cd-5b1e-49f8-9ddb-113636e2f537" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/yearbook/view/index/edit.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/yearbook/controller/Index.php" afterPath="$PROJECT_DIR$/application/yearbook/controller/Index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/yearbook/view/index/add.html" afterPath="$PROJECT_DIR$/application/yearbook/view/index/add.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/yearbook/view/index/detail.html" afterPath="$PROJECT_DIR$/application/yearbook/view/index/detail.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/yearbook/view/index/infolist.html" afterPath="$PROJECT_DIR$/application/yearbook/view/index/infolist.html" />
     </list>
     <ignored path="graduate.iws" />
@@ -26,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Index.php" pinned="true" current-in-tab="false">
+      <file leaf-file-name="Index.php" pinned="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/yearbook/controller/Index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="230" column="30" selection-start-line="230" selection-start-column="30" selection-end-line="230" selection-end-column="30" />
+            <state relative-caret-position="183">
+              <caret line="276" column="64" selection-start-line="276" selection-start-column="64" selection-end-line="276" selection-end-column="64" />
               <folding>
                 <element signature="e#41#62#0#PHP" expanded="true" />
                 <element signature="e#2871#2913#0#PHP" expanded="false" />
@@ -40,23 +40,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="infolist.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="infolist.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/yearbook/view/index/infolist.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="683">
-              <caret line="87" column="72" selection-start-line="87" selection-start-column="72" selection-end-line="87" selection-end-column="72" />
+            <state relative-caret-position="189">
+              <caret line="102" column="20" selection-start-line="102" selection-start-column="20" selection-end-line="102" selection-end-column="20" />
               <folding>
-                <element signature="e#966#972#0" expanded="true" />
-                <element signature="e#973#979#0" expanded="true" />
-                <element signature="e#979#985#0" expanded="true" />
-                <element signature="e#986#992#0" expanded="true" />
-                <element signature="e#1057#1063#0" expanded="true" />
-                <element signature="e#1064#1070#0" expanded="true" />
-                <element signature="e#1070#1076#0" expanded="true" />
-                <element signature="e#1077#1083#0" expanded="true" />
+                <element signature="e#1035#1041#0" expanded="true" />
+                <element signature="e#1042#1048#0" expanded="true" />
+                <element signature="e#1048#1054#0" expanded="true" />
+                <element signature="e#1055#1061#0" expanded="true" />
+                <element signature="e#1126#1132#0" expanded="true" />
+                <element signature="e#1133#1139#0" expanded="true" />
+                <element signature="e#1139#1145#0" expanded="true" />
+                <element signature="e#1146#1152#0" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#a#0;n#span#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#iframe#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
@@ -66,8 +67,8 @@
       <file leaf-file-name="detail.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/yearbook/view/index/detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="28" column="33" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+            <state relative-caret-position="220">
+              <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -76,11 +77,23 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="edit.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/yearbook/view/index/edit.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="10" column="77" selection-start-line="10" selection-start-column="77" selection-end-line="10" selection-end-column="77" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="add.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/yearbook/view/index/add.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="83">
-              <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
+            <state relative-caret-position="223">
+              <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -103,7 +116,7 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/yearbook/view/index/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
+            <state relative-caret-position="183">
               <caret line="94" column="17" selection-start-line="94" selection-start-column="17" selection-end-line="94" selection-end-column="17" />
               <folding>
                 <element signature="e#1585#1591#0" expanded="true" />
@@ -120,8 +133,8 @@
       <file leaf-file-name="manage.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/yearbook/view/index/manage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="30" column="55" selection-start-line="30" selection-start-column="55" selection-end-line="30" selection-end-column="55" />
+            <state relative-caret-position="80">
+              <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="16" selection-end-column="5" />
               <folding>
                 <element signature="e#585#591#0" expanded="true" />
                 <element signature="e#592#598#0" expanded="true" />
@@ -159,8 +172,9 @@
         <option value="$PROJECT_DIR$/application/yearbook/view/index/manage.html" />
         <option value="$PROJECT_DIR$/application/yearbook/view/index/add.html" />
         <option value="$PROJECT_DIR$/application/yearbook/view/index/detail.html" />
-        <option value="$PROJECT_DIR$/application/yearbook/controller/Index.php" />
         <option value="$PROJECT_DIR$/application/yearbook/view/index/infolist.html" />
+        <option value="$PROJECT_DIR$/application/yearbook/view/index/edit.html" />
+        <option value="$PROJECT_DIR$/application/yearbook/controller/Index.php" />
       </list>
     </option>
   </component>
@@ -425,12 +439,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1524963419315</updated>
-      <workItem from="1524963420687" duration="41321000" />
+      <workItem from="1524963420687" duration="45091000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41321000" />
+    <option name="totallyTimeSpent" value="45091000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -579,37 +593,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/yearbook/view/index/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="94" column="17" selection-start-line="94" selection-start-column="17" selection-end-line="94" selection-end-column="17" />
-          <folding>
-            <element signature="e#1585#1591#0" expanded="true" />
-            <element signature="e#1591#1597#0" expanded="true" />
-            <element signature="e#1597#1603#0" expanded="true" />
-            <element signature="e#1651#1657#0" expanded="true" />
-            <element signature="e#1657#1663#0" expanded="true" />
-            <element signature="e#1663#1669#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/yearbook/view/index/manage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="30" column="55" selection-start-line="30" selection-start-column="55" selection-end-line="30" selection-end-column="55" />
-          <folding>
-            <element signature="e#585#591#0" expanded="true" />
-            <element signature="e#592#598#0" expanded="true" />
-            <element signature="e#598#604#0" expanded="true" />
-            <element signature="e#605#611#0" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#span#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/thinkphp/library/think/View.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -636,22 +619,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/yearbook/controller/Index.php">
+    <entry file="file://$PROJECT_DIR$/application/yearbook/view/index/manage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="230" column="30" selection-start-line="230" selection-start-column="30" selection-end-line="230" selection-end-column="30" />
+        <state relative-caret-position="80">
+          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="16" selection-end-column="5" />
           <folding>
-            <element signature="e#41#62#0#PHP" expanded="true" />
-            <element signature="e#2871#2913#0#PHP" expanded="false" />
-            <element signature="e#3340#3386#0#PHP" expanded="false" />
+            <element signature="e#585#591#0" expanded="true" />
+            <element signature="e#592#598#0" expanded="true" />
+            <element signature="e#598#604#0" expanded="true" />
+            <element signature="e#605#611#0" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#span#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/yearbook/view/index/add.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
+        <state relative-caret-position="223">
+          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/yearbook/view/index/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="94" column="17" selection-start-line="94" selection-start-column="17" selection-end-line="94" selection-end-column="17" />
+          <folding>
+            <element signature="e#1585#1591#0" expanded="true" />
+            <element signature="e#1591#1597#0" expanded="true" />
+            <element signature="e#1597#1603#0" expanded="true" />
+            <element signature="e#1651#1657#0" expanded="true" />
+            <element signature="e#1657#1663#0" expanded="true" />
+            <element signature="e#1663#1669#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/yearbook/view/index/edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" column="77" selection-start-line="10" selection-start-column="77" selection-end-line="10" selection-end-column="77" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
@@ -660,8 +672,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/yearbook/view/index/detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="28" column="33" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+        <state relative-caret-position="220">
+          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -671,21 +683,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/yearbook/view/index/infolist.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="683">
-          <caret line="87" column="72" selection-start-line="87" selection-start-column="72" selection-end-line="87" selection-end-column="72" />
+        <state relative-caret-position="189">
+          <caret line="102" column="20" selection-start-line="102" selection-start-column="20" selection-end-line="102" selection-end-column="20" />
           <folding>
-            <element signature="e#966#972#0" expanded="true" />
-            <element signature="e#973#979#0" expanded="true" />
-            <element signature="e#979#985#0" expanded="true" />
-            <element signature="e#986#992#0" expanded="true" />
-            <element signature="e#1057#1063#0" expanded="true" />
-            <element signature="e#1064#1070#0" expanded="true" />
-            <element signature="e#1070#1076#0" expanded="true" />
-            <element signature="e#1077#1083#0" expanded="true" />
+            <element signature="e#1035#1041#0" expanded="true" />
+            <element signature="e#1042#1048#0" expanded="true" />
+            <element signature="e#1048#1054#0" expanded="true" />
+            <element signature="e#1055#1061#0" expanded="true" />
+            <element signature="e#1126#1132#0" expanded="true" />
+            <element signature="e#1133#1139#0" expanded="true" />
+            <element signature="e#1139#1145#0" expanded="true" />
+            <element signature="e#1146#1152#0" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#span#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#iframe#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/yearbook/controller/Index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="276" column="64" selection-start-line="276" selection-start-column="64" selection-end-line="276" selection-end-column="64" />
+          <folding>
+            <element signature="e#41#62#0#PHP" expanded="true" />
+            <element signature="e#2871#2913#0#PHP" expanded="false" />
+            <element signature="e#3340#3386#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>

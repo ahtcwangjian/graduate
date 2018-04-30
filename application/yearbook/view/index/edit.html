@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div style="background: lightgoldenrodyellow;text-align: center">
+    <form action="editAjax" id="info_form" method="post" enctype="multipart/form-data">
+        <input type="text" hidden name="kid" id="kid" value="{$data.key_id}">
+        年份：<input type="number" placeholder="请输入年份" name="year" id="year" value="{$data.year}"><br>
+        标题：<input type="text" placeholder="请输入标题" name="title" id="title" value="{$data.title}"><br>
+        作者：<input type="text" placeholder="请输入作者" name="author" id="author" value="{$data.author}"><br>
+        备注：<input type="text" placeholder="请输入备注" name="remark" id="remark" value="{$data.remark}"><br>
+        内容：<input type="file" name="myfile" id="myfile" ><br><br><br>
+        <input type="submit" id="tijiao" value="确认修改">
+    </form>
+</div>
+
+</body>
+</html>

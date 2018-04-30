@@ -32,6 +32,10 @@
         display: inline;
         float: left;
     }
+    .btn{
+        font-size: 15px;
+        margin-right: 20px;
+    }
 </style>
 <body>
 <h1 id="sysTitle">滁州学院{$year}年--年鉴信息管理系统</h1>
@@ -53,6 +57,14 @@
         </div>
     </div>
     <div class="right">
+        <div style="float: right">
+            <button class="btn" onclick="delbtn('{$vo.key_id}')">
+                删除
+            </button>
+            <button class="btn" onclick="editbtn('{$vo.key_id}')">
+                修改
+            </button>
+        </div>
         <iframe src="{:url('Index/detail',['id'=>$vo.key_id])}"  id="iframe_right" style="width: 100%;height: 100%">
 
         </iframe>
@@ -70,23 +82,62 @@
 
         console.log(keyid);
 
+        $("#iframe_right").attr("src","{:url('Index/detail')}?id="+keyid);
+
+    }
+
+    function delbtn(keyid)
+    {
+        $.ajax({
+            type: "POST",
+            url: "{:url('Index/delAjax')}",
+            data: {id:keyid},
+//            dataType: "text",
+            success: function (data) {
+                console.log(data);
+                if(data==1)
+                {
+                    alert("删除成功！");
+                    window.location.href="{:url('Index/infolist')}?year="+'{$year}';
+                }
+                else
+                {
+                    alert("删除失败！");
+                }
+
+
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown){
+            }
+        })
+    }
+
+    function editbtn(keyid)
+    {
+        console.log("编辑按钮事件");
+        $("#iframe_right").attr("src","{:url('Index/edit')}?id="+keyid);
 //        $.ajax({
 //            type: "POST",
-//            url: "{:url('Index/detailAjax')}",
+//            url: "{:url('Index/editAjax')}",
 //            data: {id:keyid},
 ////            dataType: "text",
 //            success: function (data) {
 //                console.log(data);
+//                if(data==1)
+//                {
+//                    alert("删除成功！");
+//                    window.location.href="{:url('Index/infolist')}?year="+'{$year}';
+//                }
+//                else
+//                {
+//                    alert("删除失败！");
+//                }
 //
 //
 //            },
 //            error: function(XMLHttpRequest, textStatus, errorThrown){
 //            }
 //        })
-//        $("#iframe_right").src="{:url('Index/add')}";
-//        $("#iframe_right").attr("src","{:url('Index/detail',['id'=>0])}");
-        $("#iframe_right").attr("src","{:url('Index/detail')}?id="+keyid);
-
     }
 
 </script>
