@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>年鉴系统登录页面</title>
+    <script type="text/javascript" src="__JS__/jquery-3.3.1.min.js"></script>
+    <style>
+        * {
+            margin: 0;padding: 0;
+        }
+
+        .d1{
+            width: 100%;height: 500px;
+            padding-top: 150px;
+            position: relative;
+        }
+        h2{
+            display: inline-block;
+            width: 380px;height: 80px;
+            position: absolute;left: 20%;top: 75px;
+            font-size: 32px;
+        }
+        .d2{
+            width: 60%;height: 300px;
+            margin: 0 auto;
+            background-color: rgb(217,232,252);
+        }
+        img {
+            display: inline-block;
+            width: 48%;height: 300px;
+            float: left;
+        }
+        .d3{
+            width: 52%;height: 300px;
+            float: left;
+        }
+        form{
+            display: inline-block;
+            width: 100%;height: 100%;
+            padding-top:70px;padding-left: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="d1">
+    <h2>大学生年鉴信息管理系统</h2>
+    <div class="d2">
+        <img src="__STATIC__/login.jpg" alt="">
+        <div class="d3">
+            <form id="loginForm" method="post">
+                学号 : <input type="text" name="xuehao"><br><br>
+                密码 : <input type="password" name="mima"><br><br>
+                <input id="ipt1" type="radio" value="" checked name="">游客&nbsp&nbsp&nbsp<input id="ipt2" type="radio" value="" name="">管理员<br><br>
+                <input type="button" value="登录" id="loginBtn">&nbsp;&nbsp;&nbsp;
+                <input type="reset" value="重置">&nbsp;&nbsp;&nbsp;
+                <input type="button" value="注册" onclick="javascrtpt:window.location.href='register.html'">
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    var ipt1 = document.getElementById('ipt1');
+    var ipt2 = document.getElementById('ipt2');
+
+    ipt1.onclick = function(){
+        ipt2.checked = false;
+    }
+    ipt2.onclick = function(){
+        ipt1.checked = false;
+    }
+</script>
+</html>
+<script>
+    /*登录点击事件*/
+    $("#loginBtn").on("click",function(){
+
+        console.log("登录点击事件");
+        $.ajax({
+            type: "POST",
+            url: "{:url('Index/loginAjax')}",
+            data: $("#loginForm").serialize(),
+            dataType: "json",
+            success: function (data) {
+//                console.log(data);
+//                alert(data.message);
+
+                if(data.status==1){
+                    window.location.href="{:url('Index/manage')}";
+//                    alert("注册成功");
+                }
+                else{
+//                    alert("提交失败");
+                    alert(data.message);
+                }
+
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown){
+//                alert(XMLHttpRequest.readyState + XMLHttpRequest.status + XMLHttpRequest.responseText);
+                alert(XMLHttpRequest.readyState);
+                alert(XMLHttpRequest.status);
+                alert( XMLHttpRequest.responseText);
+            }
+        })
+    });
+</script>
