@@ -50,7 +50,7 @@
             <form id="loginForm" method="post">
                 学号 : <input type="text" name="xuehao"><br><br>
                 密码 : <input type="password" name="mima"><br><br>
-                <input id="ipt1" type="radio" value="" checked name="">游客&nbsp&nbsp&nbsp<input id="ipt2" type="radio" value="" name="">管理员<br><br>
+                <input id="ipt1" type="radio" value="1" checked name="userflag"><label for="ipt1">游客&nbsp&nbsp&nbsp</label><input id="ipt2" type="radio" value="0" name="userflag"><label for="ipt2">管理员</label><br><br>
                 <input type="button" value="登录" id="loginBtn">&nbsp;&nbsp;&nbsp;
                 <input type="reset" value="重置">&nbsp;&nbsp;&nbsp;
                 <input type="button" value="注册" onclick="javascrtpt:window.location.href='register.html'">
@@ -60,15 +60,15 @@
 </div>
 </body>
 <script>
-    var ipt1 = document.getElementById('ipt1');
-    var ipt2 = document.getElementById('ipt2');
+    // var ipt1 = document.getElementById('ipt1');
+    // var ipt2 = document.getElementById('ipt2');
 
-    ipt1.onclick = function(){
-        ipt2.checked = false;
-    }
-    ipt2.onclick = function(){
-        ipt1.checked = false;
-    }
+    // ipt1.onclick = function(){
+    //     ipt2.checked = false;
+    // }
+    // ipt2.onclick = function(){
+    //     ipt1.checked = false;
+    // }
 </script>
 </html>
 <script>
@@ -86,7 +86,7 @@
 //                alert(data.message);
 
                 if(data.status==1){
-                    window.location.href="{:url('Index/manage')}";
+                    window.location.href="{:url('Info/index')}";
 //                    alert("注册成功");
                 }
                 else{
