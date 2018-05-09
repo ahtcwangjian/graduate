@@ -1,23 +1,14 @@
 {extend name="public/base"/}
 
 {block name="title"}
-<title>管理首页</title>
+<title>年鉴首页</title>
 {/block}
 
 {block name="nav"}
 <ul class="layui-nav layui-layout-left">
-    <li class="layui-nav-item nav_selected"><a href="{:url('List/Index')}">年鉴列表</a></li>
-    <li class="layui-nav-item"><a href="{:url('Manage/Index')}">我的设备</a></li>
-    <li class="layui-nav-item"><a href="{:url('System/Index')}">系统管理</a></li>
-    <!-- <li class="layui-nav-item"><a href="{:url('AccountSetting/Index')}">账户设置</a></li> -->
-    <li class="layui-nav-item">
-        <a href="{:url('SystemManage/Index')}">系统管理</a>
-        <dl class="layui-nav-child">
-            <dd><a href="">邮件管理</a></dd>
-            <dd><a href="">消息管理</a></dd>
-            <dd><a href="">授权管理</a></dd>
-        </dl>
-    </li>
+    <li class="layui-nav-item nav_selected"><a href="{:url('Info/Index')}">年鉴列表</a></li>
+    <li class="layui-nav-item"><a href="{:url('Manage/Index')}">年鉴管理</a></li>
+    <li class="layui-nav-item"><a href="{:url('System/Index')}">用户管理</a></li>
 </ul>
 
 
@@ -25,26 +16,7 @@
 
 {block name="left_nav"}
 <ul class="layui-nav layui-nav-tree"  lay-filter="test">
-    <!--<li class="layui-nav-item layui-nav-itemed">-->
-        <!--<a class="" href="javascript:;">所有商品</a>-->
-        <!--<dl class="layui-nav-child">-->
-            <!--<dd><a href="javascript:;">列表一</a></dd>-->
-            <!--<dd><a href="javascript:;">列表二</a></dd>-->
-            <!--<dd><a href="javascript:;">列表三</a></dd>-->
-            <!--<dd><a href="">超链接</a></dd>-->
-        <!--</dl>-->
-    <!--</li>-->
-    <!--<li class="layui-nav-item">-->
-        <!--<a href="javascript:;">解决方案</a>-->
-        <!--<dl class="layui-nav-child">-->
-            <!--<dd><a href="javascript:;">列表一</a></dd>-->
-            <!--<dd><a href="javascript:;">列表二</a></dd>-->
-            <!--<dd><a href="">超链接</a></dd>-->
-        <!--</dl>-->
-    <!--</li>-->
-    <li class="layui-nav-item"><a href="">设备总数</a></li>
-    <li class="layui-nav-item"><a href="">短信剩余</a></li>
-    <li class="layui-nav-item"><a href="">语言剩余</a></li>
+    <li class="layui-nav-item"><a href="">年鉴列表</a></li>
 </ul>
 
 {/block}
@@ -52,14 +24,14 @@
 {block name="content"}
 <div class="layui-body">
     <!-- 内容主体区域 -->
-    <div style="padding: 15px;">内容主体区域--管理首页</div>
+    <div style="padding: 15px;">内容主体区域--年鉴列表页</div>
 </div>
 {/block}
 
 {block name="footer"}
 <div class="layui-footer" style="text-align: center">
     <!-- 底部固定区域 -->
-    author:   ahtcwangjian@qq.com--管理首页
+    管理首页
 </div>
 {/block}
 

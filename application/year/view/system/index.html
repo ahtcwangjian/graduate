@@ -6,18 +6,9 @@
 
 {block name="nav"}
 <ul class="layui-nav layui-layout-left">
-    <li class="layui-nav-item"><a href="{:url('ManageIndex/Index')}">管理首页</a></li>
-    <li class="layui-nav-item"><a href="{:url('MyEquipment/Index')}">我的设备</a></li>
-    <li class="layui-nav-item"><a href="{:url('DataOutput/Index')}">数据输出</a></li>
-    <li class="layui-nav-item"><a href="{:url('AccountSetting/Index')}">账户设置</a></li>
-    <li class="layui-nav-item nav_selected">
-        <a href="{:url('SystemManage/Index')}">系统管理</a>
-        <dl class="layui-nav-child">
-            <dd><a href="">邮件管理</a></dd>
-            <dd><a href="">消息管理</a></dd>
-            <dd><a href="">授权管理</a></dd>
-        </dl>
-    </li>
+   <li class="layui-nav-item"><a href="{:url('Info/Index')}">年鉴列表</a></li>
+    <li class="layui-nav-item"><a href="{:url('Manage/Index')}">我的设备</a></li>
+    <li class="layui-nav-item  nav_selected"><a href="{:url('System/Index')}">用户管理</a></li>
 </ul>
 
 
@@ -25,26 +16,7 @@
 
 {block name="left_nav"}
 <ul class="layui-nav layui-nav-tree"  lay-filter="test">
-    <!--<li class="layui-nav-item layui-nav-itemed">-->
-        <!--<a class="" href="javascript:;">所有商品</a>-->
-        <!--<dl class="layui-nav-child">-->
-            <!--<dd><a href="javascript:;">列表一</a></dd>-->
-            <!--<dd><a href="javascript:;">列表二</a></dd>-->
-            <!--<dd><a href="javascript:;">列表三</a></dd>-->
-            <!--<dd><a href="">超链接</a></dd>-->
-        <!--</dl>-->
-    <!--</li>-->
-    <!--<li class="layui-nav-item">-->
-        <!--<a href="javascript:;">解决方案</a>-->
-        <!--<dl class="layui-nav-child">-->
-            <!--<dd><a href="javascript:;">列表一</a></dd>-->
-            <!--<dd><a href="javascript:;">列表二</a></dd>-->
-            <!--<dd><a href="">超链接</a></dd>-->
-        <!--</dl>-->
-    <!--</li>-->
-    <li class="layui-nav-item layui-nav-item-li"><a href="{:url('SystemManage/Index')}">用户管理</a></li>
-    <li class="layui-nav-item"><a href="{:url('SystemManage/AuthorizationCodeManage')}">授权码管理</a></li>
-    <li class="layui-nav-item"><a href="{:url('SystemManage/LogManage')}">日志管理</a></li>
+    <li class="layui-nav-item layui-nav-item-li"><a href="{:url('System/Index')}">用户管理</a></li>
 </ul>
 
 {/block}
@@ -59,25 +31,14 @@
 
     <div style="padding: 0 20px">
 
-        <!--搜索栏-->
-        <div class="" style="padding-bottom: 10px">
-            <form class="layui-form" id="search_user_form" style="text-align: center">
-                <input class="layui-input-block" placeholder="开始日" name="start" id="start" style="margin-left: 10px">
-                <input class="layui-input-block" placeholder="截止日" name="end" id="end" style="margin-left: 10px">
-                <input class="layui-input-block" type="text" name="user_name"  placeholder="请输入用户名" autocomplete="off" style="margin-left: 10px">
-                <button class="layui-btn"  lay-submit="" lay-filter="sreach" id="search_by_user_name"><i class="layui-icon">&#xe615;</i></button>
-            </form>
-        </div>
-
-
         <div><!--用户操作栏-->
-            <button class="layui-btn layui-btn-danger" onclick="batch_delete()">
+            <!-- <button class="layui-btn layui-btn-danger" onclick="batch_delete()">
                 <i class="layui-icon">&#xe640;</i> 批量删除
-            </button>
+            </button> -->
 
-            <button class="layui-btn" onclick="add_user()">
+            <!-- <button class="layui-btn" onclick="add_user()">
                 <i class="layui-icon">&#xe608;</i> 添加用户
-            </button>
+            </button> -->
             <label class="layui-text" style="float: right;padding-right: 20px;font-size: 18px;font-family:	KaiTi"> 共有数据: {$list->total()}条 </label>
         </div>
 
@@ -93,9 +54,9 @@
                 <th><button class="" onclick="allSelect()" id="allSelect" title="true">全选</button></th>
                 <th>序列</th>
                 <th>用户id</th>
+                <th>用户号</th>
                 <th>用户名</th>
-                <!--<th>用户密码</th>-->
-                <th>是否已启用</th>
+                <th>用户身份</th>
                 <th>操作</th>
             </tr>
             </thead>
@@ -105,41 +66,20 @@
                 <td><input type="checkbox" name="MultipleSelect" style="zoom:180%;" title="{$user.key_id}"/></td>
                 <td><?php echo $counter;?></td>
                 <td>{$user.key_id}</td>
-                <td>{$user.user_name}</td>
-                <!--<td>{$user.user_password}</td>-->
-                {if condition="$user.status eq '已启用'"}
-                    <td>
-                        <button class="layui-btn" style="background-color: #ffba5a">
-                            {$user.status}
-                        </button>
-                    </td>
-                {else /}
+                <td>{$user.student_id}</td>
+                <td>{$user.password}</td>
                 <td>
-                    <button class="layui-btn" style="background-color: darkgray">
-                        {$user.status}
-                    </button>
-                </td>
-                {/if}
-                <td>
-                    {if condition="$user.status eq '已启用'"}
-                        <a style="text-decoration:none" onClick="admin_stop(this,{$user.key_id})" href="javascript:;" title="启用">
-                            <!--<button class="layui-btn">启用</button>-->
-                            <button class="layui-btn layui-btn-primary">
-                                <i class="layui-icon">&#xe651;</i>
-                            </button>
-                        </a>
+                    {if condition="$user.user_flag eq 0"}
+                        管理员
                     {else /}
-                    <a style="text-decoration:none" onClick="admin_start(this,{$user.key_id})" href="javascript:;" title="停用">
-                        <!--<button class="layui-btn">停用</button>-->
-                        <button class="layui-btn layui-btn-primary">
-                            <i class="layui-icon">&#xe652;</i>
-                        </button>
-                    </a>
+                        普通用户
                     {/if}
+                </td>
+                <td>
                     <a title="编辑" href="javascript:;" onclick="admin_edit('{$user.key_id}')" class="ml-5" style="text-decoration:none">
                         <button class="layui-btn">编辑</button>
                     </a>
-                    <a title="删除" href="javascript:;" onclick="admin_del('{$user.key_id}','{$user.user_name}')" class="ml-5" style="text-decoration:none">
+                    <a title="删除" href="javascript:;" onclick="admin_del('{$user.key_id}','{$user.student_id}')" class="ml-5" style="text-decoration:none">
                         <button class="layui-btn">删除</button>
                     </a>
                 </td>
@@ -176,45 +116,7 @@
 {block name="th_script"}
 {__block__}
 
-<script>
-/*layui日期控件的使用*/
-    layui.use('laydate', function(){
-        var laydate = layui.laydate;
 
-        //执行一个laydate实例
-        laydate.render({
-            elem: '#start' //指定元素
-        });
-        //执行一个laydate实例
-        laydate.render({
-            elem: '#end' //指定元素
-        });
-    });
-//
-///*渲染 layui 表格控件*/
-//layui.use('table', function(){
-//    var table = layui.table;
-//
-//    table.render({
-//        elem: '#test'
-//        ,url:'__IND__/thl/system_manage/tabledata/'
-//        ,cols: [[
-////            {type:'checkbox'}
-////            ,
-//            {field:'key_id', width:80, title: 'ID', sort: true}
-//            ,{field:'user_name', width:80, title: '用户名'}
-//            ,{field:'user_email', width:80, title: '邮箱', sort: true}
-//            ,{field:'user_password', width:80, title: '密码'}
-////            ,{field:'sign', title: '签名', minWidth: 100}
-////            ,{field:'experience', width:80, title: '积分', sort: true}
-////            ,{field:'score', width:80, title: '评分', sort: true}
-////            ,{field:'classify', width:80, title: '职业'}
-////            ,{field:'wealth', width:135, title: '财富', sort: true}
-//        ]]
-//        ,page: true
-//    });
-//});
-</script>
 
 <!--用户操作js-->
 <script>
@@ -314,7 +216,7 @@
             layer.open({
                 type: 2,
                 title: '编辑用户信息'
-                ,content: '__IND__/thl/system_manage/edituser?key_id='+id,
+                ,content: '__IND__/year/system/edituser?key_id='+id,
                 area: ['500px', '500px'],
                 anim: 3,
                 maxmin:true
@@ -331,7 +233,7 @@
                 //do something
                 $.ajax({
                     type: "POST",
-                    url: "{:url('SystemManage/delUserAjax')}",
+                    url: "{:url('System/delUserAjax')}",
                     data: {key_id:id},
                     dataType: "json",
                     success: function (data) {

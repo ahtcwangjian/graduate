@@ -126,6 +126,21 @@ class Index extends Controller
 
 
 
+    /**
+     * @return array
+     * User: wangjian
+     * Date: 2017-12-25
+     * Function：ajax 用户退出登录
+     */
+    public function logout()
+    {
+        if(Session::has("user"))
+        {
+            Session::delete("user");
+            return ['data'=>'1'];/*成功清除session则返回 1 */
+        }
+        return ['data'=>'0'];/*成功清除session则返回 0 */
+    }
 
 
 }
