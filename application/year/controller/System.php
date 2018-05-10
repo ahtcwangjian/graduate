@@ -4,7 +4,7 @@
  * @Author: wangjian
  * @Date:   2018-05-08 22:11:34
  * @Last Modified by:   wangjan
- * @Last Modified time: 2018-05-10 10:12:43
+ * @Last Modified time: 2018-05-10 10:18:58
  * 系统及用户管理控制模块
  */
 namespace app\year\controller;
@@ -75,6 +75,7 @@ class System extends Controller
         {
             // $user->student_id=$data['user_name'];
             $user->password=$data['user_password'];
+            $user->user_flag=$data['user_flag'];
 
             if($user->save())
             {
