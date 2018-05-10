@@ -19,6 +19,12 @@
 
     <link rel="stylesheet" href="__STATIC__/css/bootstrap.css" />
     <script type="text/javascript" src="__ROOT__/static/js/bootstrap.js"></script>
+    <!--UEitor编辑器-->
+    <script type="text/javascript" charset="utf-8" src="__JS__/plug-in/ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="__JS__/plug-in/ueditor/ueditor.all.min.js"> </script>
+    <!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
+    <!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
+    <script type="text/javascript" charset="utf-8" src="__JS__/plug-in/ueditor/lang/zh-cn/zh-cn.js"></script>
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
@@ -27,7 +33,11 @@
         <!-- 头部区域（可配合layui已有的水平导航） -->
         {block name="nav"}
         <ul class="layui-nav layui-layout-left">
-            
+        <li class="layui-nav-item"><a href="{:url('Info/Index')}">年鉴列表</a></li>
+          {if condition="$Think.session.user.user_flag eq 0"}
+            <li class="layui-nav-item"><a href="{:url('Manage/Index')}">年鉴管理</a></li>
+            <li class="layui-nav-item"><a href="{:url('System/Index')}">用户管理</a></li>
+           {/if}
         </ul>
 
         {/block}
