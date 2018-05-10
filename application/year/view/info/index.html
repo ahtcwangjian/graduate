@@ -25,8 +25,19 @@
 
 {block name="content"}
 <div class="layui-body">
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+        <legend>年鉴列表</legend>
+    </fieldset>
     <!-- 内容主体区域 -->
-    <div style="padding: 15px;">内容主体区域--年鉴列表页</div>
+    <div style="padding: 15px;">
+        <div style="margin: 2px 50px">
+        {volist name="yeardata" id="vo"}
+                <span style="margin: 20px 20px;padding: 5px">
+                    <a href="{:url('infoList',['year'=>$vo])}"  style="font-size: 25px">{$vo}年</a><br>
+                </span>
+        {/volist}
+    </div>
+    </div>
 </div>
 {/block}
 
