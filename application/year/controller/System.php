@@ -4,7 +4,7 @@
  * @Author: wangjian
  * @Date:   2018-05-08 22:11:34
  * @Last Modified by:   wangjan
- * @Last Modified time: 2018-05-09 23:28:24
+ * @Last Modified time: 2018-05-10 10:12:43
  * 系统及用户管理控制模块
  */
 namespace app\year\controller;
@@ -64,9 +64,8 @@ class System extends Controller
         $user=UserModel::get($key_id);
 
 //        进行验证
-        // $result=$this->validate($data,'UserValidate.edit');
+
         $rule=[
-            // ['user_name','require|number|unique:user_copy,student_id','学号不能为空|学号必须为数字|该学号已存在，请填写新的学号！'],
             ['user_password','require','密码不能为空，请检查！'],
         ];
        $result=$this->validate($data,$rule);
@@ -74,7 +73,7 @@ class System extends Controller
         //        验证通过则将注册是用户信息存入数据库
         if($result===true)
         {
-            $user->student_id=$data['user_name'];
+            // $user->student_id=$data['user_name'];
             $user->password=$data['user_password'];
 
             if($user->save())

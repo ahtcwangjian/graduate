@@ -34,12 +34,13 @@
 
             <div class="layui-form-item">
                 <div class="layui-inline">
-                    <label class="layui-form-label">用户账号</label>
+                    <label class="layui-form-label">用户号</label>
                     <div class="layui-input-block">
-                        <input type="text" name="user_name" lay-verify="required" disabled="" autocomplete="off" placeholder="请输入用户账号" class="layui-input" value="{$info.student_id}">
+                        <input type="text" name="user_name" lay-verify="required" autocomplete="off" placeholder="请输入用户号" class="layui-input" value="{$info.student_id}">
                     </div>
                 </div>
             </div>
+
 
             <div class="layui-form-item">
                 <div class="layui-inline">
@@ -50,14 +51,7 @@
                 </div>
             </div>
 
-            <!--<div class="layui-form-item">-->
-                <!--<div class="layui-inline">-->
-                    <!--<label class="layui-form-label">重复密码</label>-->
-                    <!--<div class="layui-input-block">-->
-                        <!--<input type="password" name="user_password_confirm" lay-verify="required" placeholder="再次输入密码" autocomplete="off" class="layui-input" value="{$info.password}">-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
+            
 
             <div class="layui-form-item" style="display: none">
                 <div class="layui-inline">
@@ -81,12 +75,12 @@
 
 <script>
 
-    $(function(){
-        $("#edit_user_form").children().change(function(){
-            $(".layui-btn").removeClass('thl-disabled');
-            $(".layui-btn").removeAttr("disabled");
-        });
-    })
+    // $(function(){
+    //     $("#edit_user_form").children().change(function(){
+    //         $(".layui-btn").removeClass('thl-disabled');
+    //         $(".layui-btn").removeAttr("disabled");
+    //     });
+    // })
 
 
 
