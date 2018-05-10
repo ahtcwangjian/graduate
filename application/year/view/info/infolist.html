@@ -1,0 +1,126 @@
+{extend name="public/base"/}
+
+{block name="title"}
+<title>年鉴首页</title>
+{/block}
+
+{block name="nav"}
+<ul class="layui-nav layui-layout-left">
+    <li class="layui-nav-item nav_selected"><a href="{:url('Info/Index')}">年鉴列表</a></li>
+    {if condition="$Think.session.user.user_flag eq 0"}
+    	<li class="layui-nav-item"><a href="{:url('Manage/Index')}">年鉴管理</a></li>
+    	<li class="layui-nav-item"><a href="{:url('System/Index')}">用户管理</a></li>
+    {/if}
+</ul>
+
+
+{/block}
+
+{block name="left_nav"}
+<ul class="layui-nav layui-nav-tree"  lay-filter="test">
+    <li class="layui-nav-item"><a href="{:url('Info/Index')}">年鉴列表</a></li>
+</ul>
+
+{/block}
+
+{block name="content"}
+<div class="layui-body">
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+        <legend>{$year}年鉴列表</legend>
+    </fieldset>
+    <!-- 内容主体区域 -->
+    <div style="padding: 15px;">
+        <div style="margin: 2px 50px">
+            <table class="table" style="text-align: center;">
+                <tr>
+                    <th style="text-align: center;">序号</th>
+                    <th style="text-align: center;">标题</th>
+                    {if condition="$Think.session.user.user_flag eq 0"}
+                        <th style="text-align: center;">操作</th>
+                    {/if}
+                </tr>
+                {volist name="datatitle" id="vo"}
+                    <tr>
+                        <td>{$i}</td>
+                        <td><a href="{:url('Info/Detail',['id'=>$vo.key_id])}" onclick="click_tile('{$vo.key_id}')" style="font-size: 25px">{$vo.title}</a>
+                        </td>
+                        
+                        {if condition="$Think.session.user.user_flag eq 0"}
+                            <td>
+                            <a title="编辑" href="javascript:;" onclick="edit('{$vo.key_id}')" class="ml-5" style="text-decoration:none">
+                                <button class="layui-btn">编辑</button>
+                            </a>
+                            <a title="删除" href="javascript:;" onclick="del('{$vo.key_id}','{$vo.title}')" class="ml-5" style="text-decoration:none">
+                                <button class="layui-btn">删除</button>
+                            </a>
+                        </td>
+                        {/if}
+                    </tr>
+                {/volist}
+            </table>
+    </div>
+    </div>
+</div>
+{/block}
+
+{block name="footer"}
+<div class="layui-footer" style="text-align: center">
+    <!-- 底部固定区域 -->
+    管理首页
+</div>
+{/block}
+
+{block name="th_script"}
+<script type="text/javascript">
+    /**
+     * [edit 编辑 按钮点击事件]
+     * @Author   wangjian
+     * @email    ahtcwangjian@qq.com
+     * @DateTime 2018-05-10
+     * @return   {[type]}            [description]
+     */
+    function edit(key_id)
+    {
+        var id=key_id;
+        // alert("编辑");
+        window.location.href="{:url('Info/Edit')}?id="+id;
+    }
+
+    /**
+     * [del 删除 按钮点击事件]
+     * @Author   wangjian
+     * @email    ahtcwangjian@qq.com
+     * @DateTime 2018-05-10
+     * @return   {[type]}            [description]
+     */
+    function del(keyid)
+    {
+        // alert("删除");
+        $.ajax({
+            type: "POST",
+            url: "{:url('Info/delAjax')}",
+            data: {id:keyid},
+//            dataType: "text",
+            success: function (data) {
+                console.log(data);
+                if(data==1)
+                {
+                    alert("删除成功！");
+                    window.location.href="{:url('Info/infolist')}?year="+'{$year}';
+                }
+                else
+                {
+                    alert("删除失败！");
+                }
+
+
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown){
+            }
+        })
+    }
+
+</script>
+
+{__block__}
+{/block}
