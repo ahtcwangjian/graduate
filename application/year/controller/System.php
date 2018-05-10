@@ -4,7 +4,7 @@
  * @Author: wangjian
  * @Date:   2018-05-08 22:11:34
  * @Last Modified by:   wangjan
- * @Last Modified time: 2018-05-10 10:18:58
+ * @Last Modified time: 2018-05-10 21:51:38
  * 系统及用户管理控制模块
  */
 namespace app\year\controller;
@@ -12,7 +12,7 @@ use think\Controller;
 use app\year\model\UserModel;
 use think\Request;
 
-class System extends Controller
+class System extends BaseLogin
 {
     public function index()
     {

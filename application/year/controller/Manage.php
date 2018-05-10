@@ -4,7 +4,7 @@
  * @Author: wangjian
  * @Date:   2018-05-08 22:26:09
  * @Last Modified by:   wangjan
- * @Last Modified time: 2018-05-10 12:58:15
+ * @Last Modified time: 2018-05-10 21:52:56
  * 用户操作年鉴信息的界面
  */
 namespace app\year\controller;
@@ -18,7 +18,7 @@ use think\Log;
 use think\Validate;
 use think\File;
 
-class Manage extends Controller
+class Manage extends BaseLogin
 {
     public function index()
     {

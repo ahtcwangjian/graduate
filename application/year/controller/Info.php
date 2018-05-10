@@ -4,7 +4,7 @@
  * @Author: wangjian
  * @Date:   2018-05-08 22:43:16
  * @Last Modified by:   wangjan
- * @Last Modified time: 2018-05-10 21:37:45
+ * @Last Modified time: 2018-05-10 21:52:57
  * 年鉴信息列表页
  */
 
@@ -15,7 +15,7 @@ use think\Request;
 use app\year\model\UserModel;
 use app\year\model\YearbookModel;
 
-class Info extends Controller
+class Info extends BaseLogin
 {
 	/**
 	 * [index 年鉴信息列表页]
